@@ -1,0 +1,68 @@
+{
+    "name": "dewaldhugo/laravel-ai-governor",
+    "description": "Prompt versioning, token governance, and deployment tooling for Laravel AI applications. Compatible with Prism PHP, the Laravel AI SDK, and openai-php/laravel.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "ai",
+        "prompt",
+        "versioning",
+        "governance",
+        "openai",
+        "anthropic",
+        "token-budget",
+        "llm"
+    ],
+    "authors": [
+        {
+            "name": "Dewald Hugo",
+            "email": "dewaldhugo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/http": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "suggest": {
+        "openai-php/laravel": "Required to use the OpenAiAdapter.",
+        "echolabs/prism": "Required to use the PrismAdapter."
+    },
+    "autoload": {
+        "psr-4": {
+            "AiGovernor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AiGovernor\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AiGovernor\\AiGovernorServiceProvider"
+            ],
+            "aliases": {
+                "AiGovernor": "AiGovernor\\Facades\\AiGovernor"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

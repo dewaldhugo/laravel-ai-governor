@@ -1,0 +1,26 @@
+<?php
+
+use AiGovernor\Prompts\PromptDefinition;
+
+return new class extends PromptDefinition
+{
+    public string $name = '{{ slug }}';
+
+    public int $version = 1;
+
+    public string $model = 'gpt-4o-mini';
+
+    public float $temperature = 0.70;
+
+    public int $maxTokens = 1000;
+
+    public function system(): string
+    {
+        return 'You are a helpful assistant.';
+    }
+
+    public function user(): string
+    {
+        return '{{input}}';
+    }
+};
