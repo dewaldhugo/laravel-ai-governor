@@ -1,6 +1,5 @@
 <?php
 
-use AiGovernor\Adapters\NullAdapter;
 use AiGovernor\Budget\BudgetEnforcer;
 use AiGovernor\Budget\BudgetPeriod;
 use AiGovernor\Values\AdapterResult;
