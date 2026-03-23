@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class TokenUsage extends Model
 {
-    protected $table = 'token_usages';
+    protected $table = 'token_usage';
 
     protected $fillable = [
         'owner_type',
