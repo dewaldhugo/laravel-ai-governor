@@ -8,7 +8,7 @@
 
 Most Laravel AI packages solve the provider integration problem. AI Governor solves what comes after: how do you version prompts like schema, enforce spending limits per user, and deploy AI configuration through CI without touching production databases?
 
-Compatible with [Prism PHP](https://github.com/echolabs/prism), the [Laravel AI SDK](https://github.com/laravel/ai), and `openai-php/laravel`. No hard provider dependencies.
+Compatible with `openai-php/laravel` and Anthropic. Prism PHP support coming soon.
 
 ---
 
@@ -17,7 +17,15 @@ Compatible with [Prism PHP](https://github.com/echolabs/prism), the [Laravel AI 
 | Dependency | Version |
 |---|---|
 | PHP | 8.2+ |
-| Laravel | 11 / 12 |
+| Laravel | 11 / 12 / 13 |
+
+## Compatibility
+
+| Laravel | PHP       | Tested in CI |
+|---------|-----------|--------------|
+| 11.x    | 8.2 – 8.4 | ✅ |
+| 12.x    | 8.2 – 8.4 | ✅ |
+| 13.x    | 8.3 – 8.4 | ⏳ Pending `pestphp/pest-plugin-laravel` Laravel 13 support |
 
 ---
 
