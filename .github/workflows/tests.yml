@@ -14,18 +14,14 @@ jobs:
         laravel: ['11.*', '12.*', '13.*']
         dependency-version: [prefer-stable]
         include:
-        - laravel: '11.*'
-          testbench: '9.*'
-        - laravel: '12.*'
-          testbench: '10.*'
-        - laravel: '13.*'
-          testbench: '11.*'
+          - laravel: '11.*'
+            testbench: '9.*'
+          - laravel: '12.*'
+            testbench: '10.*'
+          - laravel: '13.*'
+            testbench: '11.*'
         exclude:
           - php: '8.2'
-            laravel: '13.*'
-          - php: '8.3'
-            laravel: '13.*'
-          - php: '8.4'
             laravel: '13.*'
     name: PHP ${{ matrix.php }} — Laravel ${{ matrix.laravel }}
     steps:
@@ -39,7 +35,6 @@ jobs:
           coverage: none
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
-          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --dev --${{ matrix.dependency-version }} --prefer-dist
       - name: Run tests
         run: vendor/bin/pest
