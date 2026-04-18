@@ -20,6 +20,9 @@ jobs:
             testbench: '10.*'
           - laravel: '13.*'
             testbench: '10.*'
+        exclude:
+          - php: '8.2'
+            laravel: '13.*'
     name: PHP ${{ matrix.php }} — Laravel ${{ matrix.laravel }}
     steps:
       - name: Checkout code
